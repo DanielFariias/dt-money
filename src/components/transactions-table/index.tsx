@@ -1,8 +1,10 @@
+import { SearchForm } from '../search-form'
 import * as S from './styles'
 
 export function TransactionsTable() {
   return (
     <S.Container className="container">
+      <SearchForm />
       <S.Table>
         <tbody>
           <tr>
