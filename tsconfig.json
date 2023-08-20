@@ -29,6 +29,7 @@
       "@/styles/*": ["./src/styles/*"],
       "@/contexts/*": ["./src/contexts/*"],
       "@/utils/*": ["./src/utils/*"],
+      "@/hooks/*": ["./src/hooks/*"]
     }
   },
   "include": ["src"],
