@@ -14,6 +14,14 @@ class TransactionsService implements ITransactionsService {
   async listAll() {
     return this.httpClient.get(`/transactions`)
   }
+
+  async getByQuery(query?: string) {
+    if (!query) {
+      return this.listAll()
+    }
+
+    return this.httpClient.get(`/transactions?q=${query}`)
+  }
 }
 
 export default new TransactionsService()

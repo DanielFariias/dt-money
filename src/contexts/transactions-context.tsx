@@ -6,6 +6,7 @@ import { ITransaction } from '@/types/transaction'
 
 interface ITransactionsContextData {
   transactions: ITransaction[]
+  onGetTransactions: (query: string) => Promise<void>
 }
 
 export const TransactionsContext = createContext({} as ITransactionsContextData)
@@ -13,9 +14,9 @@ export const TransactionsContext = createContext({} as ITransactionsContextData)
 export function TransactionsProvider({ children }: { children: ReactNode }) {
   const [transactions, setTransactions] = useState<ITransaction[]>([])
 
-  async function getAllTransactions() {
+  async function getTransactions(query: string = '') {
     try {
-      const contactsList = await transactionsService.listAll()
+      const contactsList = await transactionsService.getByQuery(query)
 
       setTransactions(contactsList)
     } catch (error) {
@@ -24,13 +25,14 @@ export function TransactionsProvider({ children }: { children: ReactNode }) {
   }
 
   useEffect(() => {
-    getAllTransactions()
+    getTransactions()
   }, [])
 
   return (
     <TransactionsContext.Provider
       value={{
         transactions,
+        onGetTransactions: getTransactions,
       }}
     >
       {children}
