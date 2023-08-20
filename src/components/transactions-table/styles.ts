@@ -31,6 +31,7 @@ interface IPriceHighLightProps {
 }
 
 export const PriceHighLight = styled.span<IPriceHighLightProps>`
+  white-space: nowrap;
   color: ${({ theme, variant }) =>
     variant === 'income' ? theme['green-500'] : theme['red-500']};
 `

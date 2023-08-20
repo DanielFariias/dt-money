@@ -28,6 +28,7 @@
       "@/services/*": ["./src/services/*"],
       "@/styles/*": ["./src/styles/*"],
       "@/contexts/*": ["./src/contexts/*"],
+      "@/utils/*": ["./src/utils/*"],
     }
   },
   "include": ["src"],

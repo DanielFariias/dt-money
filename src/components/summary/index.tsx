@@ -7,6 +7,7 @@ import * as S from './styles'
 import { useTheme } from 'styled-components'
 import { TransactionsContext } from '@/contexts/transactions-context'
 import { useContext } from 'react'
+import { currencyFormatter } from '@/utils/formmater'
 
 export function Summary() {
   const { transactions } = useContext(TransactionsContext)
@@ -41,7 +42,7 @@ export function Summary() {
           <p>Entradas</p>
           <ArrowCircleUp size={32} color={theme['green-300']} />
         </header>
-        <strong>{summary.income}</strong>
+        <strong>{currencyFormatter.format(summary.income)}</strong>
       </S.Card>
 
       <S.Card>
@@ -49,7 +50,7 @@ export function Summary() {
           <p>Saidas</p>
           <ArrowCircleDown size={32} color={theme['red-300']} />
         </header>
-        <strong>{summary.outcome}</strong>
+        <strong>{currencyFormatter.format(summary.outcome)}</strong>
       </S.Card>
 
       <S.Card variant="green">
@@ -57,7 +58,7 @@ export function Summary() {
           <p>Total</p>
           <CurrencyCircleDollar size={32} />
         </header>
-        <strong>{summary.total}</strong>
+        <strong>{currencyFormatter.format(summary.total)}</strong>
       </S.Card>
     </S.Container>
   )

@@ -3,6 +3,7 @@ import { ITransaction } from '@/types/transaction'
 import { SearchForm } from '../search-form'
 
 import * as S from './styles'
+import { currencyFormatter, dataFormatter } from '@/utils/formmater'
 
 interface ITransactionsTableProps {
   transactions: ITransaction[]
@@ -19,11 +20,12 @@ export function TransactionsTable({ transactions }: ITransactionsTableProps) {
               <td width="50%">{transaction.description}</td>
               <td>
                 <S.PriceHighLight variant={transaction.type}>
-                  {transaction.price}
+                  {transaction.type === 'outcome' && '- '}
+                  {currencyFormatter.format(transaction.price)}
                 </S.PriceHighLight>
               </td>
               <td>{transaction.category}</td>
-              <td>{transaction.createdAt}</td>
+              <td>{dataFormatter.format(new Date(transaction.createdAt))}</td>
             </tr>
           ))}
         </tbody>
