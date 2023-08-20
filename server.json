@@ -1,0 +1,44 @@
+{
+  "transactions": [
+    {
+      "id": 1,
+      "description": "Projeto Freelancer",
+      "price": 3000,
+      "category": "Freelancer",
+      "type": "income",
+      "createdAt": "2023-08-12T23:22:50.929Z"
+    },
+    {
+      "id": 2,
+      "description": "Bootcamp - Ignite",
+      "price": 1930,
+      "category": "Curso",
+      "type": "outcome",
+      "createdAt": "2023-08-12T23:22:50.929Z"
+    },
+    {
+      "id": 3,
+      "description": "Bootcamp - Ignite (NodeJS)",
+      "price": 300,
+      "category": "Curso",
+      "type": "outcome",
+      "createdAt": "2023-08-13T12:00:00.929Z"
+    },
+    {
+      "description": "Compras do mercado",
+      "price": 500,
+      "category": "Mercado",
+      "type": "outcome",
+      "createdAt": "2023-08-15T02:26:29.906Z",
+      "id": 4
+    },
+    {
+      "description": "Reembolso de curso",
+      "price": 1800,
+      "category": "Educação",
+      "type": "income",
+      "createdAt": "2023-08-15T02:27:02.860Z",
+      "id": 5
+    }
+  ]
+}

@@ -1,36 +1,29 @@
+import { ITransaction } from '../../@types/transaction'
 import { SearchForm } from '../search-form'
 import * as S from './styles'
 
-export function TransactionsTable() {
+interface ITransactionsTableProps {
+  transactions: ITransaction[]
+}
+
+export function TransactionsTable({ transactions }: ITransactionsTableProps) {
   return (
     <S.Container className="container">
       <SearchForm />
       <S.Table>
         <tbody>
-          <tr>
-            <td width="50%">Desenvolvimento de site</td>
-            <td>
-              <S.PriceHighLight variant="outcome">-R$ 12.000</S.PriceHighLight>
-            </td>
-            <td>venda</td>
-            <td>13/04/2023</td>
-          </tr>
-          <tr>
-            <td width="50%">Desenvolvimento de site</td>
-            <td>
-              <S.PriceHighLight variant="income">R$ 12.000</S.PriceHighLight>
-            </td>
-            <td>venda</td>
-            <td>13/04/2023</td>
-          </tr>
-          <tr>
-            <td width="50%">Desenvolvimento de site</td>
-            <td>
-              <S.PriceHighLight variant="income">R$ 12.000</S.PriceHighLight>
-            </td>
-            <td>venda</td>
-            <td>13/04/2023</td>
-          </tr>
+          {transactions.map((transaction) => (
+            <tr key={transaction.id}>
+              <td width="50%">{transaction.description}</td>
+              <td>
+                <S.PriceHighLight variant={transaction.type}>
+                  {transaction.price}
+                </S.PriceHighLight>
+              </td>
+              <td>{transaction.category}</td>
+              <td>{transaction.createdAt}</td>
+            </tr>
+          ))}
         </tbody>
       </S.Table>
     </S.Container>
