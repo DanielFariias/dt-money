@@ -1,31 +1,15 @@
-import { useEffect, useState } from 'react'
+import { useContext } from 'react'
+
+import { TransactionsContext } from '@/contexts/transactions-context'
 
 import { TransactionsTable } from '@/components/transactions-table'
 import { Summary } from '@/components/summary'
 import { Header } from '@/components/header'
 
-import transactionsService from '@/services/transactions-service'
-
-import { ITransaction } from '@/types/transaction'
-
 import * as S from './styles'
 
 export function Home() {
-  const [transactions, setTransactions] = useState<ITransaction[]>([])
-
-  async function getAllTransactions() {
-    try {
-      const contactsList = await transactionsService.listAll()
-
-      setTransactions(contactsList)
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
-  useEffect(() => {
-    getAllTransactions()
-  }, [])
+  const { transactions } = useContext(TransactionsContext)
 
   return (
     <S.Container>
