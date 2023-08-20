@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react'
 
-import { Header } from '../../components/header'
-import { Summary } from '../../components/summary'
-import { TransactionsTable } from '../../components/transactions-table'
-import transactionsService from '../../services/transactions-service'
+import { TransactionsTable } from '@/components/transactions-table'
+import { Summary } from '@/components/summary'
+import { Header } from '@/components/header'
+
+import transactionsService from '@/services/transactions-service'
+
+import { ITransaction } from '@/types/transaction'
 
 import * as S from './styles'
-import { ITransaction } from '../../@types/transaction'
 
 export function Home() {
   const [transactions, setTransactions] = useState<ITransaction[]>([])

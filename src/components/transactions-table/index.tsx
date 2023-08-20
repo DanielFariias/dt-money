@@ -1,5 +1,7 @@
-import { ITransaction } from '../../@types/transaction'
+import { ITransaction } from '@/types/transaction'
+
 import { SearchForm } from '../search-form'
+
 import * as S from './styles'
 
 interface ITransactionsTableProps {
