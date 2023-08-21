@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import APIError from '../errors/api-error'
 
 interface IOptions {

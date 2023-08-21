@@ -39,6 +39,54 @@
       "type": "income",
       "createdAt": "2023-08-15T02:27:02.860Z",
       "id": 5
+    },
+    {
+      "description": "Teste 2",
+      "price": 150,
+      "category": "Teste",
+      "type": "outcome",
+      "createdAt": "2023-08-20T18:54:35.745Z",
+      "id": 7
+    },
+    {
+      "description": "Tapioca",
+      "price": 27,
+      "category": "Alimentação",
+      "type": "income",
+      "createdAt": "2023-08-21T22:36:02.979Z",
+      "id": 8
+    },
+    {
+      "description": "Comidinha",
+      "price": 27,
+      "category": "Alimentação",
+      "type": "outcome",
+      "createdAt": "2023-08-21T23:09:34.113Z",
+      "id": 9
+    },
+    {
+      "description": "Teste",
+      "price": 10,
+      "category": "aaa",
+      "type": "income",
+      "createdAt": "2023-08-21T23:14:53.833Z",
+      "id": 10
+    },
+    {
+      "description": "a",
+      "price": 1,
+      "category": "a",
+      "type": "income",
+      "createdAt": "2023-08-21T23:15:26.344Z",
+      "id": 11
+    },
+    {
+      "description": "b",
+      "price": 10,
+      "category": "10",
+      "type": "income",
+      "createdAt": "2023-08-21T23:16:12.676Z",
+      "id": 12
     }
   ]
 }

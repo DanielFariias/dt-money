@@ -8,6 +8,8 @@ import * as Dialog from '@radix-ui/react-dialog'
 import * as z from 'zod'
 
 import * as S from './styles'
+import { useContext } from 'react'
+import { TransactionsContext } from '@/contexts/transactions-context'
 
 const newTransactionFormSchema = z.object({
   description: z.string().nonempty({ message: 'Descrição é obrigatória' }),
@@ -18,7 +20,14 @@ const newTransactionFormSchema = z.object({
 
 type TNewTransactionFormSchemaType = z.infer<typeof newTransactionFormSchema>
 
-export function NewTransactionModal() {
+interface INewTransactionModalProps {
+  onToggleModal: () => void
+}
+
+export function NewTransactionModal({
+  onToggleModal,
+}: INewTransactionModalProps) {
+  const { onCreateTransaction } = useContext(TransactionsContext)
   const {
     register,
     handleSubmit,
@@ -34,8 +43,12 @@ export function NewTransactionModal() {
   async function handleCreateNewTransaction(
     data: TNewTransactionFormSchemaType,
   ) {
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-    console.log(data)
+    try {
+      await onCreateTransaction(data)
+      onToggleModal()
+    } catch (error) {
+      console.log(error)
+    }
   }
   return (
     <Dialog.Portal>
