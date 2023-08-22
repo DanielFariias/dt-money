@@ -8,8 +8,10 @@ import * as Dialog from '@radix-ui/react-dialog'
 import * as z from 'zod'
 
 import * as S from './styles'
-import { useContext } from 'react'
+
 import { TransactionsContext } from '@/contexts/transactions-context'
+
+import { useContextSelector } from 'use-context-selector'
 
 const newTransactionFormSchema = z.object({
   description: z.string().nonempty({ message: 'Descrição é obrigatória' }),
@@ -27,11 +29,15 @@ interface INewTransactionModalProps {
 export function NewTransactionModal({
   onToggleModal,
 }: INewTransactionModalProps) {
-  const { onCreateTransaction } = useContext(TransactionsContext)
+  const onCreateTransaction = useContextSelector(TransactionsContext, (ctx) => {
+    return ctx.onCreateTransaction
+  })
+
   const {
     register,
     handleSubmit,
     formState: { isSubmitting },
+    reset,
     control,
   } = useForm<TNewTransactionFormSchemaType>({
     resolver: zodResolver(newTransactionFormSchema),
@@ -45,6 +51,7 @@ export function NewTransactionModal({
   ) {
     try {
       await onCreateTransaction(data)
+      reset()
       onToggleModal()
     } catch (error) {
       console.log(error)

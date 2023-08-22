@@ -1,92 +1,20 @@
 {
   "transactions": [
     {
-      "id": 1,
-      "description": "Projeto Freelancer",
-      "price": 3000,
-      "category": "Freelancer",
-      "type": "income",
-      "createdAt": "2023-08-12T23:22:50.929Z"
-    },
-    {
-      "id": 2,
-      "description": "Bootcamp - Ignite",
-      "price": 1930,
-      "category": "Curso",
-      "type": "outcome",
-      "createdAt": "2023-08-12T23:22:50.929Z"
-    },
-    {
-      "id": 3,
-      "description": "Bootcamp - Ignite (NodeJS)",
+      "description": "Fitness",
       "price": 300,
-      "category": "Curso",
+      "category": "Saude",
       "type": "outcome",
-      "createdAt": "2023-08-13T12:00:00.929Z"
+      "createdAt": "2023-08-22T00:22:54.506Z",
+      "id": 1
     },
     {
-      "description": "Compras do mercado",
-      "price": 500,
-      "category": "Mercado",
-      "type": "outcome",
-      "createdAt": "2023-08-15T02:26:29.906Z",
-      "id": 4
-    },
-    {
-      "description": "Reembolso de curso",
-      "price": 1800,
-      "category": "Educação",
+      "description": "Salario",
+      "price": 1320,
+      "category": "Salario",
       "type": "income",
-      "createdAt": "2023-08-15T02:27:02.860Z",
-      "id": 5
-    },
-    {
-      "description": "Teste 2",
-      "price": 150,
-      "category": "Teste",
-      "type": "outcome",
-      "createdAt": "2023-08-20T18:54:35.745Z",
-      "id": 7
-    },
-    {
-      "description": "Tapioca",
-      "price": 27,
-      "category": "Alimentação",
-      "type": "income",
-      "createdAt": "2023-08-21T22:36:02.979Z",
-      "id": 8
-    },
-    {
-      "description": "Comidinha",
-      "price": 27,
-      "category": "Alimentação",
-      "type": "outcome",
-      "createdAt": "2023-08-21T23:09:34.113Z",
-      "id": 9
-    },
-    {
-      "description": "Teste",
-      "price": 10,
-      "category": "aaa",
-      "type": "income",
-      "createdAt": "2023-08-21T23:14:53.833Z",
-      "id": 10
-    },
-    {
-      "description": "a",
-      "price": 1,
-      "category": "a",
-      "type": "income",
-      "createdAt": "2023-08-21T23:15:26.344Z",
-      "id": 11
-    },
-    {
-      "description": "b",
-      "price": 10,
-      "category": "10",
-      "type": "income",
-      "createdAt": "2023-08-21T23:16:12.676Z",
-      "id": 12
+      "createdAt": "2023-08-22T00:26:18.101Z",
+      "id": 2
     }
   ]
 }

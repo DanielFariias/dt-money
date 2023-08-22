@@ -35,3 +35,28 @@ export const PriceHighLight = styled.span<IPriceHighLightProps>`
   color: ${({ theme, variant }) =>
     variant === 'income' ? theme['green-500'] : theme['red-500']};
 `
+
+export const EmptyTransactions = styled.div`
+  width: 100%;
+  margin: 4rem auto 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: ${({ theme }) => theme['gray-500']};
+
+  p {
+    margin-top: 1rem;
+    font-size: 1rem;
+
+    span {
+      color: ${({ theme }) => theme['gray-300']};
+    }
+  }
+
+  svg {
+    margin-top: 2rem;
+    width: 100%;
+  }
+`

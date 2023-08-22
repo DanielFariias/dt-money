@@ -1,8 +1,9 @@
-import { ReactNode, createContext, useEffect, useState } from 'react'
+import { ReactNode, useCallback, useEffect, useState } from 'react'
 
 import transactionsService from '@/services/transactions-service'
 
 import { ITransaction } from '@/types/transaction'
+import { createContext } from 'use-context-selector'
 
 interface INewTransaction {
   description: string
@@ -22,7 +23,7 @@ export const TransactionsContext = createContext({} as ITransactionsContextData)
 export function TransactionsProvider({ children }: { children: ReactNode }) {
   const [transactions, setTransactions] = useState<ITransaction[]>([])
 
-  async function getTransactions(query: string = '') {
+  const getTransactions = useCallback(async (query: string = '') => {
     try {
       const params = {
         _sort: 'createdAt',
@@ -35,9 +36,9 @@ export function TransactionsProvider({ children }: { children: ReactNode }) {
     } catch (error) {
       console.log(error)
     }
-  }
+  }, [])
 
-  async function createTransaction(data: INewTransaction) {
+  const createTransaction = useCallback(async (data: INewTransaction) => {
     try {
       const newTransaction = await transactionsService.create({
         ...data,
@@ -48,11 +49,11 @@ export function TransactionsProvider({ children }: { children: ReactNode }) {
     } catch (error) {
       console.log(error)
     }
-  }
+  }, [])
 
   useEffect(() => {
     getTransactions()
-  }, [])
+  }, [getTransactions])
 
   return (
     <TransactionsContext.Provider

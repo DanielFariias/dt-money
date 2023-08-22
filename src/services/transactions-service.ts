@@ -26,7 +26,6 @@ class TransactionsService implements ITransactionsService {
       queryParams = queryParams + `&${key}=${value}`
     })
 
-    console.log(queryParams)
     return this.httpClient.get(`/transactions?${queryParams}`)
   }
 

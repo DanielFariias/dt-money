@@ -4,6 +4,7 @@ import { SearchForm } from '../search-form'
 
 import * as S from './styles'
 import { currencyFormatter, dataFormatter } from '@/utils/formmater'
+import { Table } from 'phosphor-react'
 
 interface ITransactionsTableProps {
   transactions: ITransaction[]
@@ -30,6 +31,17 @@ export function TransactionsTable({ transactions }: ITransactionsTableProps) {
           ))}
         </tbody>
       </S.Table>
+
+      {transactions.length === 0 && (
+        <S.EmptyTransactions>
+          <h2>Nenhuma transação encontrada</h2>
+          <p>
+            Clique em <span>nova transação</span> para começar a controlar seus
+            gastos
+          </p>
+          <Table size={72} />
+        </S.EmptyTransactions>
+      )}
     </S.Container>
   )
 }
